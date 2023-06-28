@@ -22,6 +22,11 @@ jobs:
       - name: Node build Aim
         run:  docker run -v ${{ github.workspace }}:/app node:16 /app/pkg/ui/aim/embed/build.sh
 
+      - name: Touch files
+        run: |
+          touch pkg/ui/mlflow/embed/build
+          touch pkg/ui/aim/embed/build
+
       - name: Set up Go
         uses: actions/setup-go@v3
 
