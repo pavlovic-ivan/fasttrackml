@@ -37,9 +37,13 @@ release:
   github:
     owner: '{{ if index .Env "GH_OWNER" }}{{ .Env.GH_OWNER }}{{ else }}""{{ end }}'
     name: '{{ if index .Env "GH_REPO_NAME" }}{{ .Env.GH_REPO_NAME }}{{ else }}""{{ end }}'
-  extra_files:
-    - glob: ./dist/*.tar.gz
-    - glob: ./dist/*.zip
+source:
+  enabled: true
+  files:
+    - dist/*.tar.gz
+    - dist/*.zip
+sboms:
+  - artifacts: archive
 
 
 # The lines beneath this are called `modelines`. See `:help modeline`
