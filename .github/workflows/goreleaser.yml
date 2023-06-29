@@ -6,7 +6,7 @@ on:
       - created
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   goreleaser:
@@ -37,9 +37,9 @@ jobs:
           version: latest
           args: release --snapshot --clean
 
-      - name: Upload release assets
-        uses: softprops/action-gh-release@v1
-        with:
-          files: |
-            ./dist/fasttrackml_Linux_arm64.tar.gz
-            ./dist/fasttrackml_Linux_x86_64.tar.gz
+    #   - name: Upload release assets
+    #     uses: softprops/action-gh-release@v1
+    #     with:
+    #       files: |
+    #         ./dist/fasttrackml_Linux_arm64.tar.gz
+    #         ./dist/fasttrackml_Linux_x86_64.tar.gz
