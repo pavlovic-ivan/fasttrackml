@@ -35,6 +35,7 @@ jobs:
         with:
           distribution: goreleaser
           version: latest
+        #   args: release --clean
           args: release --snapshot --clean
 
     #   - name: Upload release assets
