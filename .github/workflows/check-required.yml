@@ -35,7 +35,7 @@ jobs:
       - uses: pavlovic-ivan/common-actions/check-required@main
         with:
           github-token: ${{ steps.app-token.outputs.token }}
-          topken: ${{ steps.app-token.outputs.token }}
+          token: ${{ steps.app-token.outputs.token }}
           app-id: ${{ secrets.APP_ID }}
 
 
