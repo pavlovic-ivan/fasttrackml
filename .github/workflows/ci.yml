@@ -420,6 +420,11 @@ jobs:
           docker buildx imagetools create \
             $(printf -- "--tag $repo:%s " ${tags[@]}) \
             $(printf "$repo@%s " ${digests[@]})
+          newdigests=($(echo "$output" | grep -oE 'sha256:[a-f0-9]{64}'))
+          echo "Extracted Digests:"
+          for digest in "${newdigests[@]}"; do
+            echo "$digest"
+          done
           echo "::endgroup::"
 
   release:
