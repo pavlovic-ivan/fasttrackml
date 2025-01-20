@@ -413,7 +413,7 @@ jobs:
             digest=$(tar -xOf $image index.json | jq -r '.manifests[0].digest')
             digests+=($digest)
             echo "::group::Pushing $image to $repo@$digest"
-            skopeo copy oci-archive:$image:${tags[0]} docker://$repo@$digest
+#            skopeo copy oci-archive:$image:${tags[0]} docker://$repo@$digest
             echo "::endgroup::"
           done
           echo "::group::Pushing merged manifest to $repo for tags: ${tags[@]}"
